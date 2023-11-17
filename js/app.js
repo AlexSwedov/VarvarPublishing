@@ -13,6 +13,25 @@
             document.documentElement.classList.add(className);
         }));
     }
+    function formQuantity() {
+        document.addEventListener("click", (function(e) {
+            let targetElement = e.target;
+            if (targetElement.closest("[data-quantity-plus]") || targetElement.closest("[data-quantity-minus]")) {
+                const valueElement = targetElement.closest("[data-quantity]").querySelector("[data-quantity-value]");
+                let value = parseInt(valueElement.value);
+                if (targetElement.hasAttribute("data-quantity-plus")) {
+                    value++;
+                    if (+valueElement.dataset.quantityMax && +valueElement.dataset.quantityMax < value) value = valueElement.dataset.quantityMax;
+                } else {
+                    --value;
+                    if (+valueElement.dataset.quantityMin) {
+                        if (+valueElement.dataset.quantityMin > value) value = valueElement.dataset.quantityMin;
+                    } else if (value < 1) value = 1;
+                }
+                targetElement.closest("[data-quantity]").querySelector("[data-quantity-value]").value = value;
+            }
+        }));
+    }
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
     }
@@ -3689,11 +3708,8 @@
             autoHeight: true,
             speed: 1e3,
             loop: true,
-            autoplay: {
-                delay: 3e3
-            },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".bigslider__slider-pagination",
                 clickable: true
             },
             on: {}
@@ -3734,6 +3750,23 @@
             },
             on: {}
         });
+        if (document.querySelector(".productcard__slider")) new swiper_core_Swiper(".productcard__slider", {
+            modules: [ Pagination, Navigation ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            speed: 1e3,
+            pagination: {
+                el: ".productcard__pagination",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".productcard__button-prev",
+                nextEl: ".productcard__button-next"
+            },
+            on: {}
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3749,4 +3782,5 @@
     }), 0);
     window["FLS"] = true;
     isWebp();
+    formQuantity();
 })();
