@@ -3708,6 +3708,9 @@
             autoHeight: true,
             speed: 1e3,
             loop: true,
+            autoplay: {
+                delay: 5e3
+            },
             pagination: {
                 el: ".bigslider__slider-pagination",
                 clickable: true
@@ -3719,9 +3722,8 @@
             observer: true,
             observeParents: true,
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 0,
             autoHeight: false,
-            centeredSlides: true,
             loop: true,
             effect: "coverflow",
             coverflowEffect: {
