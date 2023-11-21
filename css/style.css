@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: 2197;
+  font-family: AA_Big_Sky Regular;
   font-display: swap;
-  src: url("../fonts/2197-font Regular.woff2") format("woff2"), url("../fonts/2197-font Regular.woff") format("woff");
+  src: url("../fonts/AA_Big_Sky Regular.woff2") format("woff2"), url("../fonts/AA_Big_Sky Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: garamond_allfont;
+  font-family: garamond_allfont Regular;
   font-display: swap;
   src: url("../fonts/garamond_allfont Regular.woff2") format("woff2"), url("../fonts/garamond_allfont Regular.woff") format("woff");
   font-weight: 400;
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-family: Varvarpublishing;
+  font-family: Varvarpublishing Regular;
   font-display: swap;
   src: url("../fonts/Varvarpublishing Regular.woff2") format("woff2"), url("../fonts/Varvarpublishing Regular.woff") format("woff");
   font-weight: 400;
@@ -322,13 +322,16 @@ body {
 }
 
 .gallery {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .gallery__container h2 {
-  font-family: "2197";
+  font-family: "AA_Big_Sky Regular";
   font-size: 46px;
+  letter-spacing: -2px;
   text-align: center;
+  color: #fdc337;
+  text-shadow: 10px 4px 3px #000, 7px 4px 3px #000, 5px 4px 3px #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .gallery__top {
@@ -533,16 +536,56 @@ body {
 }
 
 .gallery .item__description {
+  height: 100%;
+  padding-top: 20px;
+}
+
+.gallery .item__description a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 30px 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery .item__description a img {
+  width: 100%;
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+
+.gallery .item__description a p {
+  position: relative;
   font-family: "Spider";
   text-align: center;
-  font-size: 28px;
-  padding-top: 20px;
+  font-size: 26px;
+  padding-bottom: 10px;
+  text-shadow: 5px 5px 15px #000;
+}
+
+.gallery .item__description a p:last-child {
+  color: red;
 }
 
 .gallery .item__separated {
   display: inline-block;
   width: 80%;
   border-top: 2px solid #000;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -554,6 +597,7 @@ body {
 }
 
 .gallery .item__buy {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,10 +611,10 @@ body {
   margin: 0 auto;
 }
 
-.gallery .item__buy a {
+.gallery .item__buy button {
   width: 42px;
   height: 42px;
-  background-color: #c6c6cf;
+  background-color: #fdc337;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,13 +628,26 @@ body {
   border: 1px solid #000;
 }
 
-.gallery .item__buy a img {
+.gallery .item__buy button img {
   width: 32px;
   height: 32px;
 }
 
+.gallery .item__buy p {
+  text-shadow: 5px 5px 15px #000;
+}
+
 .reviews {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+.reviews__container h2 {
+  font-family: "AA_Big_Sky Regular";
+  font-size: 46px;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #fdc337;
+  text-shadow: 10px 4px 3px #000, 7px 4px 3px #000, 5px 4px 3px #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .reviews__top {
@@ -603,22 +660,19 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding: 0 10px 10px 10px;
-}
-
-.reviews__top h2 {
-  font-family: "2197";
-  font-size: 46px;
-  text-align: center;
-  padding: 30px 0;
+  padding: 0 50px 25px 50px;
 }
 
 .reviews__button-prev {
   position: relative;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .reviews__button-prev img {
-  width: 100px;
+  width: 80px;
 }
 
 .reviews__button-prev p {
@@ -629,15 +683,56 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Spider";
-  font-size: 22px;
+  font-size: 18px;
+}
+
+.reviews__button-prev:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.reviews__button-prev:active {
+  -webkit-animation: shake 0.1s ease;
+          animation: shake 0.1s ease;
+}
+
+@keyframes shake {
+  25% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 .reviews__button-next {
   position: relative;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .reviews__button-next img {
-  width: 100px;
+  width: 80px;
 }
 
 .reviews__button-next p {
@@ -648,7 +743,44 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Spider";
-  font-size: 22px;
+  font-size: 18px;
+}
+
+.reviews__button-next:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.reviews__button-next:active {
+  -webkit-animation: shake 0.1s ease;
+          animation: shake 0.1s ease;
+}
+
+@keyframes shake {
+  25% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 .reviews__item {
@@ -657,40 +789,108 @@ body {
           flex: 0 0 23.7%;
 }
 
-.reviews .item {
-  border: 2px solid #c6c6cf;
-}
-
 .reviews .item__img {
   text-align: center;
+  padding-bottom: 1.25rem;
 }
 
 .reviews .item__img img {
   max-width: 100%;
-  height: 300px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-box-shadow: 10px 5px 15px #000;
+          box-shadow: 10px 5px 15px #000;
 }
 
 .reviews .item__title {
+  font-family: "Spider";
   text-align: center;
-  font-size: 28px;
-  padding-top: 20px;
+  font-size: 26px;
+  padding-bottom: 0.625rem;
+  text-shadow: 5px 5px 15px #000;
 }
 
 .reviews .item__review {
-  padding: 20px;
+  padding-bottom: 0.625rem;
 }
 
-.reviews .item__review p {
-  text-align: left;
-  font-size: 18px;
+.reviews .item__review-text {
+  position: relative;
+}
+
+.reviews .item__review-text p {
+  font-family: "Spider";
+  font-size: 16px;
+  padding: 0.625rem;
+  border: 2px solid #000;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px #000;
+          box-shadow: 5px 5px 15px #000;
+  background-color: #fff;
+}
+
+.reviews .item__review-bubbles {
+  width: 100%;
+}
+
+.reviews .item__review-bubbles span {
+  display: block;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.reviews .item__review-bubbles :nth-child(1) {
+  width: 40px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 40%;
+  -webkit-box-shadow: 4px 4px 12px #000;
+          box-shadow: 4px 4px 12px #000;
+}
+
+.reviews .item__review-bubbles :nth-child(2) {
+  width: 25px;
+  height: 15px;
+  margin-left: 37%;
+  -webkit-box-shadow: 3px 3px 10px #000;
+          box-shadow: 3px 3px 10px #000;
+}
+
+.reviews .item__review-bubbles :nth-child(3) {
+  width: 10px;
+  height: 10px;
+  margin-left: 35%;
+  -webkit-box-shadow: 2px 2px 7px #000;
+          box-shadow: 2px 2px 7px #000;
+}
+
+.reviews .item__review-avatar {
+  padding-left: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+}
+
+.reviews .item__review-avatar img {
+  width: 35%;
 }
 
 .reviews .item__name {
   display: inline-block;
-  font-size: 22px;
-  padding-bottom: 10px;
+  font-family: "Spider";
+  font-size: 20px;
+  padding: 0.3125rem;
+  border: 2px solid #000;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px #000;
+          box-shadow: 5px 5px 15px #000;
+  background-color: #fff;
 }
 
 .communication {
