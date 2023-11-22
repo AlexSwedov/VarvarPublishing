@@ -54,7 +54,7 @@ body {
 body {
   color: #000;
   line-height: 1;
-  font-family: "Varvarpublishing Regular";
+  font-family: "Spider";
   font-size: 0.875rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -66,7 +66,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Varvarpublishing Regular";
+  font-family: "Spider";
   font-size: inherit;
   line-height: inherit;
 }
@@ -177,12 +177,25 @@ body {
      object-fit: contain;
 }
 
-.header__menu {
-  padding: 10px 70px;
+.header__container {
+  position: relative;
 }
 
-.menu {
-  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+.header__blackbg {
+  position: absolute;
+  width: 100%;
+  height: 2.5rem;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-color: #000;
+}
+
+.header__menu {
+  padding: 0.625rem 4.375rem;
+  position: relative;
 }
 
 .menu__body {
@@ -198,10 +211,10 @@ body {
 }
 
 .menu__logo {
-  width: 150px;
+  width: 9.375rem;
 }
 
-.menu__logo img {
+.menu__logo a img {
   width: 100%;
   border: 1px solid #000;
 }
@@ -210,42 +223,38 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 25px;
+  gap: 1.5625rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .menu__item-divider {
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
   border-radius: 50%;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .menu__item {
-  padding-top: 2px;
+  padding-top: 0.125rem;
 }
 
 .menu__link {
   font-family: "garamond_allfont";
-  font-size: 24px;
+  color: #fff;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
 .menu__cart {
-  max-width: 150px;
+  max-width: 5.625rem;
   width: 100%;
   text-align: center;
 }
 
-.menu__cart svg {
-  fill: #607980;
-}
-
-.menu__cart-text {
-  fill: #FFFFFF;
-  font: 56px "Bulgaria_Moderna_Pro";
+.menu__cart img {
+  width: 100%;
 }
 
 .icon-menu {
@@ -253,8 +262,8 @@ body {
 }
 
 .about {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
 }
 
 .about__img {
@@ -277,11 +286,13 @@ body {
 }
 
 .about__text h1 {
-  font-size: 82px;
+  font-family: "Varvarpublishing Regular";
+  font-size: 5.125rem;
 }
 
 .about__text p {
-  font-size: 36px;
+  font-family: "Varvarpublishing Regular";
+  font-size: 2.25rem;
 }
 
 .bigslider {
@@ -305,14 +316,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
   position: absolute;
-  bottom: 60px;
+  bottom: 3.75rem;
 }
 
 .bigslider__slider-pagination .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   background-color: gray;
   border-radius: 50%;
 }
@@ -322,16 +333,16 @@ body {
 }
 
 .gallery {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .gallery__container h2 {
   font-family: "AA_Big_Sky Regular";
-  font-size: 46px;
-  letter-spacing: -2px;
+  font-size: 2.875rem;
+  letter-spacing: -0.125rem;
   text-align: center;
   color: #fdc337;
-  text-shadow: 10px 4px 3px #000, 7px 4px 3px #000, 5px 4px 3px #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
 }
 
 .gallery__top {
@@ -344,7 +355,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding: 0 50px 25px 50px;
+  padding: 0rem 3.125rem 1.5625rem 3.125rem;
 }
 
 .gallery__button-prev {
@@ -356,7 +367,7 @@ body {
 }
 
 .gallery__button-prev img {
-  width: 80px;
+  width: 5rem;
 }
 
 .gallery__button-prev p {
@@ -367,7 +378,7 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Spider";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .gallery__button-prev:hover {
@@ -438,7 +449,7 @@ body {
 }
 
 .gallery__button-next img {
-  width: 80px;
+  width: 5rem;
 }
 
 .gallery__button-next p {
@@ -448,8 +459,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-family: "Spider";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .gallery__button-next:hover {
@@ -505,7 +515,7 @@ body {
 .gallery .item__img {
   text-align: center;
   position: relative;
-  padding-top: 25px;
+  padding-top: 1.5625rem;
 }
 
 .gallery .item__img:hover .item__img-product {
@@ -520,8 +530,8 @@ body {
 
 .gallery .item__img-product {
   width: 45%;
-  margin-bottom: -130px;
-  margin-right: -55px;
+  margin-bottom: -8.125rem;
+  margin-right: -3.4375rem;
   position: relative;
   -webkit-box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.5);
           box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.5);
@@ -537,7 +547,7 @@ body {
 
 .gallery .item__description {
   height: 100%;
-  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 .gallery .item__description a {
@@ -545,7 +555,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 30px 15px 0 15px;
+  padding: 1.875rem 0.9375rem 0rem 0.9375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,17 +574,16 @@ body {
 .gallery .item__description a img {
   width: 100%;
   position: absolute;
-  top: -100px;
+  top: -6.25rem;
   left: 0;
 }
 
 .gallery .item__description a p {
   position: relative;
-  font-family: "Spider";
   text-align: center;
-  font-size: 26px;
-  padding-bottom: 10px;
-  text-shadow: 5px 5px 15px #000;
+  font-size: 1.625rem;
+  padding-bottom: 0.625rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .gallery .item__description a p:last-child {
@@ -584,16 +593,15 @@ body {
 .gallery .item__separated {
   display: inline-block;
   width: 80%;
-  border-top: 2px solid #000;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  border-top: 0.125rem solid #000;
+  margin-top: 1.875rem;
+  margin-bottom: 0.625rem;
 }
 
 .gallery .item__price {
   text-align: center;
-  font-family: "Spider";
-  font-size: 28px;
-  padding-bottom: 20px;
+  font-size: 1.75rem;
+  padding-bottom: 1.25rem;
 }
 
 .gallery .item__buy {
@@ -612,8 +620,8 @@ body {
 }
 
 .gallery .item__buy button {
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
   background-color: #fdc337;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -624,30 +632,58 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 5px;
-  border: 1px solid #000;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #000;
 }
 
 .gallery .item__buy button img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .gallery .item__buy p {
-  text-shadow: 5px 5px 15px #000;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+}
+
+.news {
+  margin-bottom: 3.125rem;
+}
+
+.news__container h2 {
+  font-family: "AA_Big_Sky Regular";
+  font-size: 2.875rem;
+  letter-spacing: -0.125rem;
+  text-align: center;
+  color: #fdc337;
+  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
+}
+
+.news__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4%;
+  margin-top: 3.125rem;
+}
+
+.news__item {
+  width: 48%;
+  height: 12.5rem;
+  border: 0.125rem solid #000;
+  border-radius: 1.25rem;
 }
 
 .reviews {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .reviews__container h2 {
   font-family: "AA_Big_Sky Regular";
-  font-size: 46px;
-  letter-spacing: -2px;
+  font-size: 2.875rem;
+  letter-spacing: -0.125rem;
   text-align: center;
   color: #fdc337;
-  text-shadow: 10px 4px 3px #000, 7px 4px 3px #000, 5px 4px 3px #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
 }
 
 .reviews__top {
@@ -660,7 +696,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  padding: 0 50px 25px 50px;
+  padding: 0rem 3.125rem 1.5625rem 3.125rem;
 }
 
 .reviews__button-prev {
@@ -672,7 +708,7 @@ body {
 }
 
 .reviews__button-prev img {
-  width: 80px;
+  width: 5rem;
 }
 
 .reviews__button-prev p {
@@ -682,8 +718,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-family: "Spider";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .reviews__button-prev:hover {
@@ -732,7 +767,7 @@ body {
 }
 
 .reviews__button-next img {
-  width: 80px;
+  width: 5rem;
 }
 
 .reviews__button-next p {
@@ -742,8 +777,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-family: "Spider";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .reviews__button-next:hover {
@@ -796,19 +830,18 @@ body {
 
 .reviews .item__img img {
   max-width: 100%;
-  height: 200px;
+  height: 12.5rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 10px 5px 15px #000;
-          box-shadow: 10px 5px 15px #000;
+  -webkit-box-shadow: 0.625rem 0.3125rem 0.9375rem #000;
+          box-shadow: 0.625rem 0.3125rem 0.9375rem #000;
 }
 
 .reviews .item__title {
-  font-family: "Spider";
   text-align: center;
-  font-size: 26px;
+  font-size: 1.625rem;
   padding-bottom: 0.625rem;
-  text-shadow: 5px 5px 15px #000;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .reviews .item__review {
@@ -820,13 +853,12 @@ body {
 }
 
 .reviews .item__review-text p {
-  font-family: "Spider";
   font-size: 16px;
   padding: 0.625rem;
   border: 2px solid #000;
-  border-radius: 15px;
-  -webkit-box-shadow: 5px 5px 15px #000;
-          box-shadow: 5px 5px 15px #000;
+  border-radius: 0.9375rem;
+  -webkit-box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+          box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
   background-color: #fff;
 }
 
@@ -836,34 +868,34 @@ body {
 
 .reviews .item__review-bubbles span {
   display: block;
-  border: 2px solid #000;
+  border: 0.125rem solid #000;
   border-radius: 50%;
   background-color: #fff;
 }
 
 .reviews .item__review-bubbles :nth-child(1) {
-  width: 40px;
-  height: 20px;
-  margin-top: 5px;
+  width: 2.5rem;
+  height: 1.25rem;
+  margin-top: 0.3125rem;
   margin-left: 40%;
-  -webkit-box-shadow: 4px 4px 12px #000;
-          box-shadow: 4px 4px 12px #000;
+  -webkit-box-shadow: 0.25rem 0.25rem 0.75rem #000;
+          box-shadow: 0.25rem 0.25rem 0.75rem #000;
 }
 
 .reviews .item__review-bubbles :nth-child(2) {
-  width: 25px;
-  height: 15px;
+  width: 1.5625rem;
+  height: 0.9375rem;
   margin-left: 37%;
-  -webkit-box-shadow: 3px 3px 10px #000;
-          box-shadow: 3px 3px 10px #000;
+  -webkit-box-shadow: 0.1875rem 0.1875rem 0.625rem #000;
+          box-shadow: 0.1875rem 0.1875rem 0.625rem #000;
 }
 
 .reviews .item__review-bubbles :nth-child(3) {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   margin-left: 35%;
-  -webkit-box-shadow: 2px 2px 7px #000;
-          box-shadow: 2px 2px 7px #000;
+  -webkit-box-shadow: 0.125rem 0.125rem 0.4375rem #000;
+          box-shadow: 0.125rem 0.125rem 0.4375rem #000;
 }
 
 .reviews .item__review-avatar {
@@ -883,18 +915,17 @@ body {
 
 .reviews .item__name {
   display: inline-block;
-  font-family: "Spider";
-  font-size: 20px;
+  font-size: 1.25rem;
   padding: 0.3125rem;
   border: 2px solid #000;
-  border-radius: 15px;
-  -webkit-box-shadow: 5px 5px 15px #000;
-          box-shadow: 5px 5px 15px #000;
+  border-radius: 0.9375rem;
+  -webkit-box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+          box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
   background-color: #fff;
 }
 
 .communication {
-  padding: 30px 0;
+  padding: 1.875rem 0rem;
 }
 
 .communication__container {
@@ -921,68 +952,58 @@ body {
 }
 
 .communication__contacts h2 {
+  font-family: "AA_Big_Sky Regular";
+  font-size: 2.875rem;
+  letter-spacing: -0.125rem;
   text-align: center;
-  font-size: 46px;
-  padding-bottom: 10px;
+  color: #fdc337;
+  margin-bottom: 1.875rem;
+  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
 }
 
 .communication__contacts label {
-  font-size: 24px;
+  font-size: 1.5rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .communication__contacts input {
   display: block;
   width: 50%;
-  padding-bottom: 15px;
-  font-size: 20px;
+  padding-bottom: 0.9375rem;
+  font-size: 0.875rem;
   background-color: #c6c6cf;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.communication__contacts input ::-webkit-input-placeholder {
-  font-size: 20px;
-}
-
-.communication__contacts input ::-moz-placeholder {
-  font-size: 20px;
-}
-
-.communication__contacts input :-ms-input-placeholder {
-  font-size: 20px;
-}
-
-.communication__contacts input ::-ms-input-placeholder {
-  font-size: 20px;
-}
-
-.communication__contacts input ::placeholder {
-  font-size: 20px;
+  padding: 0.3125rem;
+  border-radius: 0.625rem;
+  margin: 0.625rem 0rem;
+  border: 0.0625rem solid #000;
 }
 
 .communication__contacts textarea {
-  margin-top: 15px;
-  font-size: 20px;
+  font-size: 0.875rem;
   background-color: #c6c6cf;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+  margin-bottom: 0.625rem;
+  border: 0.0625rem solid #000;
 }
 
 .communication__contacts button {
-  background-color: black;
-  font-size: 24px;
-  color: #c6c6cf;
-  padding: 5px 10px;
-  border-radius: 10px;
+  background-color: #fdc337;
+  font-size: 1.5rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  color: #000;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #000;
 }
 
 .communication__maps {
   width: 50%;
+  border: 0.0625rem solid #000;
 }
 
 .footer {
-  padding-bottom: 30px;
+  padding-bottom: 1.875rem;
 }
 
 .footer__wrapper {
@@ -992,8 +1013,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 30px;
-  border-top: 3px solid rgba(0, 0, 0, 0.5);
+  padding-top: 1.875rem;
+  border-top: 0.1875rem solid rgba(0, 0, 0, 0.5);
 }
 
 .footer__contact {
@@ -1006,21 +1027,24 @@ body {
 }
 
 .footer__contact h3 {
-  font-size: 20px;
-  margin-right: 20px;
+  font-size: 1.25rem;
+  margin-right: 1.25rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .footer__contact img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .footer__safety a {
-  font-size: 20px;
+  font-size: 1.25rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .footer__servise a {
-  font-size: 20px;
+  font-size: 1.25rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .footer__copy {
@@ -1030,11 +1054,12 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-top: 30px;
+  margin-top: 1.875rem;
 }
 
 .footer__copy p {
-  font-size: 16px;
+  font-size: 1rem;
+  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
 }
 
 .productcard__container {
