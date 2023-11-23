@@ -267,6 +267,10 @@ body {
   margin-bottom: 3.125rem;
 }
 
+.about__container {
+  position: relative;
+}
+
 .about__img {
   position: relative;
   border: 3px solid #000;
@@ -281,9 +285,10 @@ body {
   position: absolute;
   z-index: 5;
   top: 50%;
-  -webkit-transform: translate(0%, -50%);
-      -ms-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -1655,7 +1660,7 @@ body {
   }
 
   .about__text p {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
   }
 
   .bigslider__slider-pagination .swiper-pagination-bullet {
@@ -2418,15 +2423,15 @@ body {
     }
 }
 
-@supports (font-size: clamp( 0.75rem , 0.3653846154rem  +  1.9230769231vw , 0.875rem )) {
+@supports (font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem )) {
     .about__text p {
-      font-size: clamp( 0.75rem , 0.3653846154rem  +  1.9230769231vw , 0.875rem );
+      font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem );
     }
 }
 
-@supports not (font-size: clamp( 0.75rem , 0.3653846154rem  +  1.9230769231vw , 0.875rem )) {
+@supports not (font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem )) {
     .about__text p {
-      font-size: calc(0.75rem + 0.125 * (100vw - 20rem) / 6.5);
+      font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 6.5);
     }
 }
 
