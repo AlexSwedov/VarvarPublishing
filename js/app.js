@@ -13,6 +13,52 @@
             document.documentElement.classList.add(className);
         }));
     }
+    let bodyLockStatus = true;
+    let bodyLockToggle = (delay = 500) => {
+        if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
+    };
+    let bodyUnlock = (delay = 500) => {
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+            let lock_padding = document.querySelectorAll("[data-lp]");
+            setTimeout((() => {
+                for (let index = 0; index < lock_padding.length; index++) {
+                    const el = lock_padding[index];
+                    el.style.paddingRight = "0px";
+                }
+                body.style.paddingRight = "0px";
+                document.documentElement.classList.remove("lock");
+            }), delay);
+            bodyLockStatus = false;
+            setTimeout((function() {
+                bodyLockStatus = true;
+            }), delay);
+        }
+    };
+    let bodyLock = (delay = 500) => {
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+            let lock_padding = document.querySelectorAll("[data-lp]");
+            for (let index = 0; index < lock_padding.length; index++) {
+                const el = lock_padding[index];
+                el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+            }
+            body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+            document.documentElement.classList.add("lock");
+            bodyLockStatus = false;
+            setTimeout((function() {
+                bodyLockStatus = true;
+            }), delay);
+        }
+    };
+    function menuInit() {
+        if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
+            if (bodyLockStatus && e.target.closest(".icon-menu")) {
+                bodyLockToggle();
+                document.documentElement.classList.toggle("menu-open");
+            }
+        }));
+    }
     function formQuantity() {
         document.addEventListener("click", (function(e) {
             let targetElement = e.target;
@@ -3708,9 +3754,6 @@
             autoHeight: true,
             speed: 1e3,
             loop: true,
-            autoplay: {
-                delay: 5e3
-            },
             pagination: {
                 el: ".bigslider__slider-pagination",
                 clickable: true
@@ -3735,6 +3778,19 @@
                 prevEl: ".gallery__button-prev",
                 nextEl: ".gallery__button-next"
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.3,
+                    centeredSlides: true
+                },
+                425: {
+                    slidesPerView: 2,
+                    centeredSlides: false
+                },
+                768: {
+                    slidesPerView: 3
+                }
+            },
             on: {}
         });
         if (document.querySelector(".reviews__slider")) new swiper_core_Swiper(".reviews__slider", {
@@ -3749,6 +3805,17 @@
             navigation: {
                 prevEl: ".reviews__button-prev",
                 nextEl: ".reviews__button-next"
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2
+                },
+                425: {
+                    slidesPerView: 3
+                },
+                768: {
+                    slidesPerView: 4
+                }
             },
             on: {}
         });
@@ -3784,5 +3851,6 @@
     }), 0);
     window["FLS"] = true;
     isWebp();
+    menuInit();
     formQuantity();
 })();
