@@ -279,6 +279,7 @@ body {
 .about__text {
   width: 100%;
   position: absolute;
+  z-index: 5;
   top: 50%;
   -webkit-transform: translate(0%, -50%);
       -ms-transform: translate(0%, -50%);
