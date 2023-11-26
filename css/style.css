@@ -626,8 +626,9 @@ body {
 .gallery .item__buy p {
   text-align: center;
   font-size: 1.625rem;
-  font-weight: bold;
-  text-shadow: 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #fff, -0.0625rem 0.0625rem 0rem #fff, 0.0625rem 0.0625rem 0rem #fff;
+  font-weight: 100;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .gallery .item__buy button {
@@ -827,7 +828,8 @@ body {
   text-align: center;
   font-size: 1.625rem;
   padding-bottom: 0.625rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .reviews .item__review {
@@ -945,7 +947,8 @@ body {
 
 .communication__contacts label {
   font-size: 1.5rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .communication__contacts input {
@@ -973,8 +976,8 @@ body {
 .communication__contacts button {
   background-color: #fdc337;
   font-size: 1.5rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
-  color: #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
   padding: 0.3125rem 0.625rem;
   border-radius: 0.625rem;
   border: 0.0625rem solid #000;
@@ -1012,7 +1015,8 @@ body {
 .footer__contact h3 {
   font-size: 1.25rem;
   margin-right: 1.25rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .footer__contact img {
@@ -1022,12 +1026,14 @@ body {
 
 .footer__safety a {
   font-size: 1.25rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .footer__servise a {
   font-size: 1.25rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .footer__copy {
@@ -1042,7 +1048,8 @@ body {
 
 .footer__copy p {
   font-size: 1rem;
-  text-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  text-shadow: 0rem 0rem 0.625rem #000, 0.3125rem 0.3125rem 1.5625rem #000, 0.625rem 0.625rem 0.9375rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
+  color: #fff;
 }
 
 .productcard__container {
