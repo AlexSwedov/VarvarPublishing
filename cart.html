@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
 	<title>VarvarPublishing</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231124115427">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231126163304">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,14 +27,15 @@
 						</div>
 						<ul class="menu__list">
 							<li class="menu__item"><a href="https://www.varvarpublishing.com/" target="_blank" class="menu__link">Головна</a></li>
-							<span class="menu__item-divider"></span>
-							<li class="menu__item"><a href="#" class="menu__link">Магазин</a></li>
-							<span class="menu__item-divider"></span>
+							<li class="menu__item"><span class="menu__item-divider"></span></li>
+							<li class="menu__item"><a id="hello" href="#" class="menu__link">Магазин</a></li>
+							<li class="menu__item"><span class="menu__item-divider"></span></li>
 							<li class="menu__item"><a href="https://malopus.com.ua/" class="menu__link" target="_blank">Контакти</a></li>
 						</ul>
 						<div class="menu__cart">
-							<a href="./cart.html" target="_blank" class="menu__cart">
+							<a href="http://192.168.0.105:8080/cart.html" target="_blank" class="menu__cart">
 								<img src="img/png/cart.png" alt="">
+								<span id="cart-indicator">0</span>
 							</a>
 						</div>
 					</nav>
@@ -42,6 +43,15 @@
 			</div>
 		</header>
 		<main class="page">
+			<section class="cart">
+				<div class="cart__container">
+					<ul id="cart-items"></ul>
+					<div class="cart__pay">
+						<p id="total">Загальна сума: ₴ 0</p>
+						<button>Купити</button>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -65,8 +75,9 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231124115427"></script>
-	<script async src="//www.instagram.com/embed.js?_v=20231124115427"></script>
+	<script src="js/app.min.js?_v=20231126163304"></script>
+	<script async src="//www.instagram.com/embed.js?_v=20231126163304"></script>
+
 </body>
 
 </html>
