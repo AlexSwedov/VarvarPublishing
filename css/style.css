@@ -101,7 +101,7 @@ h6 {
 }
 
 body {
-  background: url("../img/png/bg.png") 0 0/100% 100% no-repeat fixed;
+  background: url("../img/webp/bg.webp") 0 0/100% 100% no-repeat fixed;
 }
 
 .lock body {
@@ -1686,13 +1686,13 @@ body {
 
 @media (orientation: portrait) and (max-width: 1024px) {
   body {
-    background: url("../img/png/bg_fablet.png") 0 0/100% 100% no-repeat fixed;
+    background: url("../img/webp/bg_fablet.webp") 0 0/100% 100% no-repeat fixed;
   }
 }
 
 @media (orientation: landscape) and (max-width: 1024px) {
   body {
-    background: url("../img/png/bg_mobile_horizontal.png") 0 0/100% 100% no-repeat fixed;
+    background: url("../img/webp/bg_mobile_horizontal.webp") 0 0/100% 100% no-repeat fixed;
   }
 }
 
@@ -1735,7 +1735,7 @@ body {
 
 @media (orientation: portrait) and (max-width: 425px) {
   body {
-    background: url("../img/png/bg_mobile_vertical.png") 0 0/100% 100% no-repeat fixed;
+    background: url("../img/webp/bg_mobile_vertical.webp") 0 0/100% 100% no-repeat fixed;
   }
 }
 
