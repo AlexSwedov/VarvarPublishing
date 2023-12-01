@@ -1042,7 +1042,7 @@ body {
 }
 
 .productcard__container {
-  padding: 50px 0;
+  padding: 0 0 3.125rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1051,7 +1051,7 @@ body {
 
 .productcard__slider-wrapper {
   position: relative;
-  width: 48%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -1072,8 +1072,7 @@ body {
 }
 
 .productcard__slide img {
-  width: 500px;
-  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1089,13 +1088,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 10px;
-  padding: 30px 0;
+  gap: 0.625rem;
+  padding: 0.75rem 0;
 }
 
 .productcard__pagination .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   background-color: gray;
   border-radius: 50%;
 }
@@ -1107,12 +1106,12 @@ body {
 .productcard__button-prev,
 .productcard__button-next {
   position: absolute;
-  top: -1.6%;
+  top: -2%;
 }
 
 .productcard__button-prev img,
 .productcard__button-next img {
-  width: 100px;
+  width: 3.75rem;
 }
 
 .productcard__button-prev p,
@@ -1124,7 +1123,7 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-family: "Spider";
-  font-size: 22px;
+  font-size: 0.75rem;
 }
 
 .productcard__button-prev.swiper-button-disabled,
@@ -1149,7 +1148,7 @@ body {
 }
 
 .productcard__info {
-  width: 48%;
+  width: 56%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1157,30 +1156,32 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 24px;
+  margin: auto 0;
 }
 
 .productcard__description {
   width: 100%;
   background-color: #eceaea;
   padding: 0.625rem 0.625rem 0rem 0.625rem;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 1.25rem 1.25rem 0rem 0rem;
 }
 
 .productcard__description h2 {
   font-family: "Spider";
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 1.875rem;
+  margin-bottom: 0.625rem;
 }
 
 .productcard__description ul {
   font-family: "garamond_allfont";
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
 }
 
 .productcard__description p {
   font-family: "garamond_allfont";
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
 }
 
 .productcard__add p {
@@ -1193,13 +1194,13 @@ body {
 
 .productcard__buy h2 {
   font-family: "garamond_allfont Regular";
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   text-align: center;
-  margin: 0 0 15px 0;
-  padding: 15px 0;
+  margin: 0 0 0.9375rem 0;
+  padding: 0.9375rem 0;
   background-color: #eceaea;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0rem 0rem 1.25rem 1.25rem;
 }
 
 .productcard__buy form {
@@ -1217,19 +1218,21 @@ body {
 
 .productcard__buy form textarea {
   font-family: "garamond_allfont";
+  font-size: 1.25rem;
   background-color: #eceaea;
   width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
 }
 
 .productcard__buy form button {
   font-family: "Spider";
+  font-size: 1.5rem;
   background-color: #c6c6cf;
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: 1px solid #000;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #000;
 }
 
 .cart__container ul li {

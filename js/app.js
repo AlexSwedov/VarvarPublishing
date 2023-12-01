@@ -3735,6 +3735,9 @@
             autoHeight: true,
             speed: 1e3,
             loop: true,
+            autoplay: {
+                delay: 5e3
+            },
             pagination: {
                 el: ".bigslider__slider-pagination",
                 clickable: true
