@@ -271,7 +271,7 @@
             }));
             setTimeout((() => {
                 this._focusTrap();
-            }), 50);
+            }), 10);
             this.popupLogging(`Закрив попап`);
         }
         _getHash() {
