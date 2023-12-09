@@ -4137,40 +4137,15 @@
         }
     }));
     document.addEventListener("DOMContentLoaded", (function() {
+        const cartPopup = document.getElementById("cart");
         const cartItemsList = document.getElementById("cart-items");
         const totalDisplay = document.getElementById("total");
-        const cartIndicator = document.getElementById("cart-indicator");
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.forEach((item => {
-            if (!item.hasOwnProperty("quantity")) item.quantity = 1;
-        }));
-        function updateQuantity(itemId, newQuantity) {
-            cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const index = cart.findIndex((item => item.id === itemId));
-            if (index !== -1) {
-                cart[index].quantity = newQuantity;
-                localStorage.setItem("cart", JSON.stringify(cart));
-                updateTotalAndIndicator();
-                renderCart();
-            }
-        }
-        function removeFromCart(itemId) {
-            cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const index = cart.findIndex((item => item.id === itemId));
-            if (index !== -1) {
-                cart.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(cart));
-                updateTotalAndIndicator();
-                renderCart();
-            }
-        }
-        function updateTotalAndIndicator() {
-            const total = cart.reduce(((sum, item) => sum + item.price * (item.quantity || 1)), 0);
-            totalDisplay.innerText = `Загальна сума: ₴ ${total.toFixed(2)}`;
-            const totalItemsInCart = cart.reduce(((sum, item) => sum + (item.quantity || 1)), 0);
-            cartIndicator.innerText = totalItemsInCart;
-        }
-        function renderCart() {
+        document.getElementById("cart-indicator");
+        function displayCartInPopup() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.forEach((item => {
+                if (!item.hasOwnProperty("quantity")) item.quantity = 1;
+            }));
             cartItemsList.innerHTML = "";
             cart.forEach((item => {
                 const cartItemElement = document.createElement("li");
@@ -4182,38 +4157,44 @@
                 const productInfo = document.createElement("div");
                 productInfo.innerHTML = `<p><span>${item.name}</span><span>₴ ${item.price}</span></p>`;
                 cartItemElement.appendChild(productInfo);
-                const controlsDiv = document.createElement("div");
                 const decreaseButton = document.createElement("button");
                 decreaseButton.innerHTML = "-";
                 decreaseButton.addEventListener("click", (function() {
-                    if (item.quantity > 1) updateQuantity(item.id, item.quantity - 1);
+                    if (item.quantity > 1) {
+                        updateQuantity(item.id, item.quantity - 1);
+                        displayCartInPopup();
+                    }
                 }));
-                controlsDiv.appendChild(decreaseButton);
-                const quantityInput = document.createElement("input");
-                quantityInput.value = item.quantity;
-                quantityInput.min = 1;
-                quantityInput.addEventListener("input", (function() {
-                    updateQuantity(item.id, parseInt(quantityInput.value, 10) || 1);
-                }));
-                controlsDiv.appendChild(quantityInput);
+                cartItemElement.appendChild(decreaseButton);
+                const quantitySpan = document.createElement("span");
+                quantitySpan.innerHTML = item.quantity;
+                cartItemElement.appendChild(quantitySpan);
                 const increaseButton = document.createElement("button");
                 increaseButton.innerHTML = "+";
                 increaseButton.addEventListener("click", (function() {
                     updateQuantity(item.id, item.quantity + 1);
+                    displayCartInPopup();
                 }));
-                controlsDiv.appendChild(increaseButton);
-                cartItemElement.appendChild(controlsDiv);
+                cartItemElement.appendChild(increaseButton);
                 const deleteButton = document.createElement("button");
                 deleteButton.innerHTML = "&#215;";
                 deleteButton.addEventListener("click", (function() {
                     removeFromCart(item.id);
+                    displayCartInPopup();
                 }));
                 cartItemElement.appendChild(deleteButton);
                 cartItemsList.appendChild(cartItemElement);
             }));
+            const totalAmount = cart.reduce(((sum, item) => sum + item.price * (item.quantity || 1)), 0);
+            totalDisplay.innerText = `Загальна сума: ₴ ${totalAmount.toFixed(2)}`;
         }
-        renderCart();
-        updateTotalAndIndicator();
+        cartPopup.addEventListener("popupOpen", (function() {
+            displayCartInPopup();
+        }));
+        document.getElementById("menu__cart").addEventListener("click", (function() {
+            cartPopup.classList.add("show");
+            cartPopup.dispatchEvent(new Event("popupOpen"));
+        }));
     }));
     window["FLS"] = true;
     isWebp();
