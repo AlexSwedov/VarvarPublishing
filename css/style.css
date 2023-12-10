@@ -287,6 +287,17 @@ body::after {
   margin-bottom: 10px;
 }
 
+.cart .popup__content {
+  text-align: end;
+}
+
+.cart .popup__close {
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -1368,7 +1379,7 @@ body::after {
   border: 0.0625rem solid #000;
 }
 
-.cart__container ul li {
+.cart ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1380,44 +1391,51 @@ body::after {
           justify-content: space-between;
   margin-bottom: 1.875rem;
   border: 5px solid gray;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 
-.cart__container ul li img {
-  margin-right: 3.125rem;
-}
-
-.cart__container ul li div {
-  font-size: 1.5rem;
-  padding-right: 3.125rem;
-}
-
-.cart__container ul li div p {
-  width: 100%;
+.cart-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
 }
 
-.cart__container ul li button {
-  margin-right: 0.625rem;
-  margin-left: 0.625rem;
+.cart-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.cart-quantity button {
   font-size: 2.5rem;
   border: 0.0625rem solid #000;
   border-radius: 50%;
   padding: 0rem 0.625rem;
 }
 
-.cart__container ul li input {
+.cart-quantity input {
   width: 3.125rem;
   height: 100%;
   text-align: center;
   font-size: 1.875rem;
   background-color: transparent;
+}
+
+.cart-delete {
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #000;
 }
 
 .cart__pay {
@@ -1441,6 +1459,21 @@ body::after {
   border: 0.125rem solid gray;
   padding: 0.3125rem 0.625rem;
   border-radius: 0.625rem;
+}
+
+.no-spinners {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.no-spinners::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinners[type=number] {
+  -moz-appearance: textfield;
 }
 
 .legal-popup {
@@ -2151,47 +2184,23 @@ body::after {
     font-size: 0.5rem;
   }
 
-  .cart__container ul li {
+  .cart ul li {
     margin-bottom: 0.625rem;
   }
 
-  .cart__container ul li img {
-    margin-right: 0.625rem;
-  }
-
-  .cart__container ul li div {
-    font-size: 0.75rem;
-  }
-
-  .cart__container ul li div {
-    padding-right: 0.9375rem;
-  }
-
-  .cart__container ul li button {
-    margin-right: 0.125rem;
-  }
-
-  .cart__container ul li button {
-    margin-left: 0.125rem;
-  }
-
-  .cart__container ul li button {
-    font-size: 0.375rem;
-  }
-
-  .cart__container ul li button {
+  .cart-quantity button {
     padding-right: 0.125rem;
   }
 
-  .cart__container ul li button {
+  .cart-quantity button {
     padding-left: 0.125rem;
   }
 
-  .cart__container ul li input {
+  .cart-quantity input {
     width: 0.625rem;
   }
 
-  .cart__container ul li input {
+  .cart-quantity input {
     font-size: 0.625rem;
   }
 
@@ -3721,133 +3730,61 @@ body::after {
 }
 
 @supports (margin-bottom: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem )) {
-    .cart__container ul li {
+    .cart ul li {
       margin-bottom: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem );
     }
 }
 
 @supports not (margin-bottom: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem )) {
-    .cart__container ul li {
+    .cart ul li {
       margin-bottom: calc(0.625rem + 1.25 * (100vw - 20rem) / 27.9375);
     }
 }
 
-@supports (margin-right: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem )) {
-    .cart__container ul li img {
-      margin-right: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem );
-    }
-}
-
-@supports not (margin-right: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem )) {
-    .cart__container ul li img {
-      margin-right: calc(0.625rem + 2.5 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (font-size: clamp( 0.75rem , 0.2130872483rem  +  2.6845637584vw , 1.5rem )) {
-    .cart__container ul li div {
-      font-size: clamp( 0.75rem , 0.2130872483rem  +  2.6845637584vw , 1.5rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.75rem , 0.2130872483rem  +  2.6845637584vw , 1.5rem )) {
-    .cart__container ul li div {
-      font-size: calc(0.75rem + 0.75 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (padding-right: clamp( 0.9375rem , -0.6284955257rem  +  7.8299776286vw , 3.125rem )) {
-    .cart__container ul li div {
-      padding-right: clamp( 0.9375rem , -0.6284955257rem  +  7.8299776286vw , 3.125rem );
-    }
-}
-
-@supports not (padding-right: clamp( 0.9375rem , -0.6284955257rem  +  7.8299776286vw , 3.125rem )) {
-    .cart__container ul li div {
-      padding-right: calc(0.9375rem + 2.1875 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (margin-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
-      margin-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem );
-    }
-}
-
-@supports not (margin-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
-      margin-right: calc(0.125rem + 0.5 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (margin-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
-      margin-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem );
-    }
-}
-
-@supports not (margin-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
-      margin-left: calc(0.125rem + 0.5 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (font-size: clamp( 0.375rem , -1.1462527964rem  +  7.6062639821vw , 2.5rem )) {
-    .cart__container ul li button {
-      font-size: clamp( 0.375rem , -1.1462527964rem  +  7.6062639821vw , 2.5rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.375rem , -1.1462527964rem  +  7.6062639821vw , 2.5rem )) {
-    .cart__container ul li button {
-      font-size: calc(0.375rem + 2.125 * (100vw - 20rem) / 27.9375);
-    }
-}
-
 @supports (padding-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
+    .cart-quantity button {
       padding-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem );
     }
 }
 
 @supports not (padding-right: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
+    .cart-quantity button {
       padding-right: calc(0.125rem + 0.5 * (100vw - 20rem) / 27.9375);
     }
 }
 
 @supports (padding-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
+    .cart-quantity button {
       padding-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem );
     }
 }
 
 @supports not (padding-left: clamp( 0.125rem , -0.2329418345rem  +  1.7897091723vw , 0.625rem )) {
-    .cart__container ul li button {
+    .cart-quantity button {
       padding-left: calc(0.125rem + 0.5 * (100vw - 20rem) / 27.9375);
     }
 }
 
 @supports (width: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem )) {
-    .cart__container ul li input {
+    .cart-quantity input {
       width: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem );
     }
 }
 
 @supports not (width: clamp( 0.625rem , -1.1647091723rem  +  8.9485458613vw , 3.125rem )) {
-    .cart__container ul li input {
+    .cart-quantity input {
       width: calc(0.625rem + 2.5 * (100vw - 20rem) / 27.9375);
     }
 }
 
 @supports (font-size: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem )) {
-    .cart__container ul li input {
+    .cart-quantity input {
       font-size: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem );
     }
 }
 
 @supports not (font-size: clamp( 0.625rem , -0.2698545861rem  +  4.4742729306vw , 1.875rem )) {
-    .cart__container ul li input {
+    .cart-quantity input {
       font-size: calc(0.625rem + 1.25 * (100vw - 20rem) / 27.9375);
     }
 }
