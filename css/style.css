@@ -970,6 +970,11 @@ body::after {
 }
 
 .reviews .item__review-text p {
+  text-indent: 10px;
+  text-align: justify;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-size: 16px;
   padding: 0.625rem;
   border: 2px solid #000;
@@ -3007,15 +3012,15 @@ body::after {
     }
 }
 
-@supports (font-size: clamp( 0.625rem , -0.5288461538rem  +  5.7692307692vw , 1rem )) {
+@supports (font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem )) {
     .reviews .item__review-text p {
-      font-size: clamp( 0.625rem , -0.5288461538rem  +  5.7692307692vw , 1rem );
+      font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem );
     }
 }
 
-@supports not (font-size: clamp( 0.625rem , -0.5288461538rem  +  5.7692307692vw , 1rem )) {
+@supports not (font-size: clamp( 0.625rem , -0.1442307692rem  +  3.8461538462vw , 0.875rem )) {
     .reviews .item__review-text p {
-      font-size: calc(0.625rem + 0.375 * (100vw - 20rem) / 6.5);
+      font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 6.5);
     }
 }
 
