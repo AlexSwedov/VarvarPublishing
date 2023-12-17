@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231210190421">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231217230832">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,15 +26,17 @@
 							</a>
 						</div>
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#news" class="menu__link">Новини</a></li>
+							<li class="menu__item"><a data-goto-speed="1000" data-goto="#news" href="#" class="menu__link">Новини</a></li>
 							<li class="menu__item"><span class="menu__item-divider"></span></li>
-							<li class="menu__item"><a id="hello" href="#gallery" class="menu__link">Магазин</a></li>
+							<li class="menu__item"><a href="#" data-popup="#magazin" class="menu__link">Магазин</a></li>
 							<li class="menu__item"><span class="menu__item-divider"></span></li>
-							<li class="menu__item"><a href="#communication" class="menu__link">Контакти</a></li>
+							<li class="menu__item"><a data-goto-speed="1000" data-goto="#communication" href="#" class="menu__link">Контакти</a></li>
 						</ul>
 						<div class="menu__cart">
 							<a href="#" data-popup="#cart" id="menu__cart">
-								<img src="img/png/cart.png" alt="">
+								<img srcset="img/png/cart_mobile.png 767w,
+						img/png/cart.png" sizes="(max-width: 767px) 100vw,
+						768px" src="img/png/cart.png" alt="cart">
 								<span id="cart-indicator">0</span>
 							</a>
 						</div>
@@ -61,16 +63,24 @@
 					<div class="bigslider__slider swiper">
 						<div class="bigslider__wrapper swiper-wrapper">
 							<div class="bigslider__slide swiper-slide">
-								<img src="img/webp/banner1.webp" alt="img_banner" loading="lazy">
+								<img srcset="img/png/banner_1_mobile.png 424w,
+						img/webp/banner1.webp" sizes="(max-width: 424px) 100vw,
+						425px" src="img/webp/banner1.webp" alt="img_banner" loading="lazy">
 							</div>
 							<div class="bigslider__slide swiper-slide">
-								<img src="img/webp/banner2.webp" alt="img_banner" loading="lazy">
+								<img srcset="img/png/banner_2_mobile.png 424w,
+						img/webp/banner2.webp" sizes="(max-width: 424px) 100vw,
+						425px" src="img/webp/banner2.webp" alt="img_banner" loading="lazy">
 							</div>
 							<div class="bigslider__slide swiper-slide">
-								<img src="img/webp/banner3.webp" alt="img_banner" loading="lazy">
+								<img srcset="img/png/banner_3_mobile.png 424w,
+						img/webp/banner3.webp" sizes="(max-width: 424px) 100vw,
+						425px" src="img/webp/banner3.webp" alt="img_banner" loading="lazy">
 							</div>
 							<div class="bigslider__slide swiper-slide">
-								<img src="img/webp/banner4.webp" alt="img_banner" loading="lazy">
+								<img srcset="img/png/banner_4_mobile.png 424w,
+						img/webp/banner4.webp" sizes="(max-width: 424px) 100vw,
+						425px" src="img/webp/banner4.webp" alt="img_banner" loading="lazy">
 							</div>
 						</div>
 						<div class="bigslider__slider-pagination"></div>
@@ -383,15 +393,15 @@
 				<div class="communication__container">
 					<div class="communication__contacts">
 						<h2>Зв'язок з нами</h2>
-						<form action="#" method="post">
+						<form action="files/sendmail/sendmail.php" method="POST">
 							<label for="name">Ім'я</label>
-							<input id="name" type="text" name="name" placeholder="Вкажіть Ваше імя" required>
+							<input id="name" class="input" type="text" name="form[name]" placeholder="Вкажіть Ваше імя" required>
 							<label for="email">Ел. пошта</label>
-							<input id="email" type="email" name="email" placeholder="Вкажіть електронну пошту" required>
+							<input id="email" class="input" type="email" name="form[email]" placeholder="Вкажіть електронну пошту" required>
 							<label for="theme">Тема</label>
-							<input id="theme" type="text" name="theme" placeholder="Вкажіть тему повідомлення" required>
-							<textarea name="textform" id="message" cols="55" rows="8" placeholder="Добавте повідомлення..." required></textarea>
-							<button type="submit">Надіслати</button>
+							<input id="theme" class="input" type="text" name="form[theme]" placeholder="Вкажіть тему повідомлення" required>
+							<textarea name="form[textform]" type="text" class="textarea" id="message" cols="55" rows="8" placeholder="Добавте повідомлення..." required></textarea>
+							<button type="submit" class="button">Надіслати</button>
 						</form>
 					</div>
 					<div class="communication__maps">
@@ -404,8 +414,8 @@
 			<div class="footer__container">
 				<div class="footer__wrapper">
 					<div class="footer__contact">
-						<h3>Ми в соцмережах</h3>
-						<a href="https://www.instagram.com/varvar_publishing/"><img src="img/svg/instagram.svg" alt=""></a>
+						<h3>Ми в соцмережах:</h3>
+						<a href="https://www.instagram.com/varvar_publishing/">Instagram</a>
 
 					</div>
 					<div class="footer__safety">
@@ -423,6 +433,408 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+
+	<div id="magazin" aria-hidden="true" class="popup magazin">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрити</button>
+				<div class="popup__text">
+					<div class="magazin__gallery">
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="magazin__item item">
+							<div class="item__img">
+								<a href="#" data-popup="#productcard">
+									<img class="item__img-product" src="img/png/book1.png" alt="img_book">
+								</a>
+							</div>
+							<div class="item__description">
+								<a href="#" data-popup="#productcard">
+									<p class="item__product-name">Людина-павук:</p>
+									<p class="item__product-subname">Останнє полювання Крейвена</p>
+									<p>(Основна обкладинка)</p>
+									<p>В наявності</p>
+								</a>
+							</div>
+							<div class="item__price">
+								<span class="item__separated"></span>
+								<div class="item__buy">
+									<p class="item__product-price">₴ 450,00</p>
+									<button class="add-to-cart">
+										<img class="item__cart" src="img/svg/incart.svg" alt="img_incart">
+										<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+										<span class="item__added-text">Додано</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="cart" aria-hidden="true" class="popup cart">
@@ -458,7 +870,7 @@
 						<div class="productcard__slider swiper">
 							<div class="productcard__wrapper swiper-wrapper">
 								<div class="productcard__slide swiper-slide">
-									<img src="img/png/product_book.png" alt="img_book">
+									<img class="item__img-product" src="img/png/product_book.png" alt="img_book">
 								</div>
 								<div class="productcard__slide swiper-slide" lazy="true">
 									<img src="img/jpg/productcard1.jpg" alt="img_book">
@@ -474,7 +886,12 @@
 					</div>
 					<div class="productcard__info">
 						<div class="productcard__description">
-							<h2>Людина-павук: Останнє полювання Крейвена (Основна обкладинка)</h2>
+							<div>
+								<p class="item__product-name">Людина-павук:</p>
+								<p class="item__product-subname">Останнє полювання Крейвена</p>
+								<p>(Основна обкладинка)</p>
+								<p>В наявності</p>
+							</div>
 							<ul>
 								<li>Виробник: MARVEL</li>
 								<li>Автор: Дематтейс Джон Марк</li>
@@ -492,12 +909,13 @@
 							</div>
 						</div>
 						<div class="productcard__buy">
-							<h2>₴ 450,00</h2>
-							<form action="">
-								<label for=""></label>
-								<textarea name="" id="" cols="30" rows="5" placeholder="Додайте коментарій до замовлення..."></textarea>
-								<button class="add-to-cart">Додати у кошик</button>
-							</form>
+							<h2 class="item__product-price">₴ 450,00</h2>
+							<button class="add-to-cart">
+								<!-- <img class="item__cart" src="img/svg/incart.svg" alt="img_incart"> -->
+								<img class="item__added-cart" src="img/png/tocart.png" alt="img_tocart">
+								<span class="item__added-text">Додано</span>
+								Додати у кошик
+							</button>
 						</div>
 					</div>
 				</div>
@@ -657,8 +1075,8 @@
 
 
 
-	<script src="js/app.min.js?_v=20231210190421"></script>
-	<script async src="//www.instagram.com/embed.js?_v=20231210190421"></script>
+	<script src="js/app.min.js?_v=20231217230832"></script>
+	<script async src="//www.instagram.com/embed.js?_v=20231217230832"></script>
 
 </body>
 
