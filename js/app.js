@@ -4495,6 +4495,14 @@
                     const cart = JSON.parse(localStorage.getItem("cart")) || [];
                     const totalAmount = cart.reduce(((sum, item) => sum + item.price * item.quantity), 0);
                     totalAmountElement.textContent = `Загальна сума: ₴${totalAmount.toFixed(2)}`;
+                    const buyButton = document.querySelector(".buyButton");
+                    if (totalAmount === 0) {
+                        totalAmountElement.textContent = "Ви не вибрали жодного товару";
+                        buyButton.disabled = true;
+                    } else {
+                        totalAmountElement.textContent = `Загальна сума: ₴${totalAmount.toFixed(2)}`;
+                        buyButton.disabled = false;
+                    }
                 }
                 updateTotalAmount();
                 updateCartIndicator();
