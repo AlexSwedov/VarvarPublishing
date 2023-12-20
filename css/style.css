@@ -1246,6 +1246,14 @@ body::after {
   padding: 0.3125rem 0.625rem;
   border-radius: 0.625rem;
   border: 0.0625rem solid #000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.communication__contacts button:hover {
+  background-color: #27e50a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .communication__maps {
@@ -1630,7 +1638,7 @@ body::after {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.625rem;
-  padding: 0.75rem 0;
+  padding: 0.625rem 0 1.25rem 0;
 }
 
 .productcard__pagination .swiper-pagination-bullet {
@@ -1747,12 +1755,12 @@ body::after {
   width: 100%;
 }
 
-.productcard__buy h2 {
+.productcard__buy p {
   font-family: "garamond_allfont Regular";
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin: 0 0 0.9375rem 0;
+  margin-bottom: 0.9375rem;
   padding: 0.9375rem 0;
   background-color: #eceaea;
   border-radius: 0rem 0rem 1.25rem 1.25rem;
@@ -2207,26 +2215,6 @@ body::after {
   .productcard__button-next p {
     font-size: 0.75rem;
   }
-
-  .productcard__description ul {
-    font-size: 1.125rem;
-  }
-
-  .productcard__description p {
-    font-size: 1.25rem;
-  }
-
-  .productcard .productcard__header p {
-    font-size: 1.5rem;
-  }
-
-  .productcard__buy h2 {
-    font-size: 1.5rem;
-  }
-
-  .productcard .add-to-cart {
-    font-size: 1.25rem;
-  }
 }
 
 @media (orientation: portrait) and (max-width: 1024px) {
@@ -2317,8 +2305,25 @@ body::after {
     width: 100%;
   }
 
+  .productcard__pagination {
+    padding-bottom: 1.5625rem;
+  }
+
+  .productcard__button-prev,
+  .productcard__button-next {
+    top: -1.5%;
+  }
+
   .productcard__info {
     width: 100%;
+  }
+
+  .productcard__buy p {
+    margin-bottom: 5;
+  }
+
+  .productcard__buy {
+    margin-bottom: 0.625rem;
   }
 }
 
@@ -2737,6 +2742,26 @@ body::after {
 
   .cart__pay button {
     font-size: 0.75rem;
+  }
+
+  .productcard__description ul {
+    font-size: 0.875rem;
+  }
+
+  .productcard__description p {
+    font-size: 0.875rem;
+  }
+
+  .productcard .productcard__header p {
+    font-size: 1rem;
+  }
+
+  .productcard__buy p {
+    font-size: 1rem;
+  }
+
+  .productcard .add-to-cart {
+    font-size: 0.875rem;
   }
 
   .productcard .item__added-cart {
@@ -5759,64 +5784,64 @@ body::after {
 }
 }
 
-@media (min-width: 26.5625em) and (max-width: 64em) {
-@supports (font-size: clamp( 0.875rem , 0.6976210351rem  +  0.6677796327vw , 1.125rem )) {
+@media (min-width: 20em) and (max-width: 64em) {
+@supports (font-size: clamp( 0.875rem , 0.7613636364rem  +  0.5681818182vw , 1.125rem )) {
     .productcard__description ul {
-      font-size: clamp( 0.875rem , 0.6976210351rem  +  0.6677796327vw , 1.125rem );
+      font-size: clamp( 0.875rem , 0.7613636364rem  +  0.5681818182vw , 1.125rem );
     }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.6976210351rem  +  0.6677796327vw , 1.125rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.7613636364rem  +  0.5681818182vw , 1.125rem )) {
     .productcard__description ul {
-      font-size: calc(0.875rem + 0.25 * (100vw - 26.5625rem) / 37.4375);
+      font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 44);
     }
 }
 
-@supports (font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem )) {
+@supports (font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem )) {
     .productcard__description p {
-      font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem );
+      font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem );
     }
 }
 
-@supports not (font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem )) {
     .productcard__description p {
-      font-size: calc(1rem + 0.25 * (100vw - 26.5625rem) / 37.4375);
+      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 44);
     }
 }
 
-@supports (font-size: clamp( 1.125rem , 0.8589315526rem  +  1.0016694491vw , 1.5rem )) {
+@supports (font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem )) {
     .productcard .productcard__header p {
-      font-size: clamp( 1.125rem , 0.8589315526rem  +  1.0016694491vw , 1.5rem );
+      font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem );
     }
 }
 
-@supports not (font-size: clamp( 1.125rem , 0.8589315526rem  +  1.0016694491vw , 1.5rem )) {
+@supports not (font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem )) {
     .productcard .productcard__header p {
-      font-size: calc(1.125rem + 0.375 * (100vw - 26.5625rem) / 37.4375);
+      font-size: calc(1rem + 0.5 * (100vw - 20rem) / 44);
     }
 }
 
-@supports (font-size: clamp( 1rem , 0.6452420701rem  +  1.3355592654vw , 1.5rem )) {
-    .productcard__buy h2 {
-      font-size: clamp( 1rem , 0.6452420701rem  +  1.3355592654vw , 1.5rem );
+@supports (font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem )) {
+    .productcard__buy p {
+      font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem );
     }
 }
 
-@supports not (font-size: clamp( 1rem , 0.6452420701rem  +  1.3355592654vw , 1.5rem )) {
-    .productcard__buy h2 {
-      font-size: calc(1rem + 0.5 * (100vw - 26.5625rem) / 37.4375);
+@supports not (font-size: clamp( 1rem , 0.7727272727rem  +  1.1363636364vw , 1.5rem )) {
+    .productcard__buy p {
+      font-size: calc(1rem + 0.5 * (100vw - 20rem) / 44);
     }
 }
 
-@supports (font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem )) {
+@supports (font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem )) {
     .productcard .add-to-cart {
-      font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem );
+      font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem );
     }
 }
 
-@supports not (font-size: clamp( 1rem , 0.8226210351rem  +  0.6677796327vw , 1.25rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.7045454545rem  +  0.8522727273vw , 1.25rem )) {
     .productcard .add-to-cart {
-      font-size: calc(1rem + 0.25 * (100vw - 26.5625rem) / 37.4375);
+      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 44);
     }
 }
 }
