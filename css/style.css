@@ -596,10 +596,10 @@ body::after {
 .gallery__container h2 {
   font-family: "AA_Big_Sky Regular";
   font-size: 2.875rem;
-  letter-spacing: -0.125rem;
+  letter-spacing: 0rem;
   text-align: center;
   color: #fdc337;
-  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
+  text-shadow: 0rem 0rem 3.75rem #000, 0rem 0rem 1.875rem rgba(0, 0, 0, 0.5), 0.25rem -0.1125rem 0rem #000, 0.28125rem -0.04375rem 0rem #000, 0.28125rem -0.0125rem 0rem #000, 0.25rem -0.0625rem 0rem #000, 0.25rem 0.05rem 0rem #000, 0.1875rem -0.075rem 0rem #000, 0.1875rem 0.0625rem 0rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
   padding-top: 3.125rem;
 }
 
@@ -908,10 +908,10 @@ body::after {
 .news__container h2 {
   font-family: "AA_Big_Sky Regular";
   font-size: 2.875rem;
-  letter-spacing: -0.125rem;
+  letter-spacing: 0rem;
   text-align: center;
   color: #fdc337;
-  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
+  text-shadow: 0rem 0rem 3.75rem #000, 0rem 0rem 1.875rem rgba(0, 0, 0, 0.5), 0.25rem -0.1125rem 0rem #000, 0.28125rem -0.04375rem 0rem #000, 0.28125rem -0.0125rem 0rem #000, 0.25rem -0.0625rem 0rem #000, 0.25rem 0.05rem 0rem #000, 0.1875rem -0.075rem 0rem #000, 0.1875rem 0.0625rem 0rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
 }
 
 .news__wrapper {
@@ -973,10 +973,10 @@ body::after {
 .reviews__container h2 {
   font-family: "AA_Big_Sky Regular";
   font-size: 2.875rem;
-  letter-spacing: -0.125rem;
+  letter-spacing: 0rem;
   text-align: center;
   color: #fdc337;
-  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
+  text-shadow: 0rem 0rem 3.75rem #000, 0rem 0rem 1.875rem rgba(0, 0, 0, 0.5), 0.25rem -0.1125rem 0rem #000, 0.28125rem -0.04375rem 0rem #000, 0.28125rem -0.0125rem 0rem #000, 0.25rem -0.0625rem 0rem #000, 0.25rem 0.05rem 0rem #000, 0.1875rem -0.075rem 0rem #000, 0.1875rem 0.0625rem 0rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
 }
 
 .reviews__top {
@@ -1203,11 +1203,11 @@ body::after {
 .communication__contacts h2 {
   font-family: "AA_Big_Sky Regular";
   font-size: 2.875rem;
-  letter-spacing: -0.125rem;
+  letter-spacing: 0rem;
   text-align: center;
   color: #fdc337;
   margin-bottom: 1.875rem;
-  text-shadow: 0.625rem 0.25rem 0.1875rem #000, 0.4375rem 0.25rem 0.1875rem #000, 0.3125rem 0.25rem 0.1875rem #000, 0.125rem -0.125rem 0rem #000, -0.125rem 0.125rem 0rem #000, 0.125rem 0.125rem 0rem #000;
+  text-shadow: 0rem 0rem 3.75rem #000, 0rem 0rem 1.875rem rgba(0, 0, 0, 0.5), 0.25rem -0.1125rem 0rem #000, 0.28125rem -0.04375rem 0rem #000, 0.28125rem -0.0125rem 0rem #000, 0.25rem -0.0625rem 0rem #000, 0.25rem 0.05rem 0rem #000, 0.1875rem -0.075rem 0rem #000, 0.1875rem 0.0625rem 0rem #000, 0.0625rem -0.0625rem 0rem #000, -0.0625rem 0.0625rem 0rem #000, 0.0625rem 0.0625rem 0rem #000;
 }
 
 .communication__contacts label {
@@ -2428,10 +2428,6 @@ body::after {
   }
 
   .gallery__container h2 {
-    letter-spacing: 0.0000000625rem;
-  }
-
-  .gallery__container h2 {
     margin-bottom: 0.9375rem;
   }
 
@@ -2546,10 +2542,6 @@ body::after {
   }
 
   .news__container h2 {
-    letter-spacing: 0.0625rem;
-  }
-
-  .news__container h2 {
     margin-bottom: 0.9375rem;
   }
 
@@ -2571,10 +2563,6 @@ body::after {
 
   .reviews__container h2 {
     font-size: 1.5rem;
-  }
-
-  .reviews__container h2 {
-    letter-spacing: 0.0625rem;
   }
 
   .reviews__container h2 {
@@ -2607,10 +2595,6 @@ body::after {
 
   .communication__contacts h2 {
     font-size: 1.5rem;
-  }
-
-  .communication__contacts h2 {
-    letter-spacing: 0.0625rem;
   }
 
   .communication__contacts h2 {
@@ -3618,18 +3602,6 @@ body::after {
     }
 }
 
-@supports (letter-spacing: clamp( -0.125rem , 0.3846156394rem  +  -1.9230778846vw , 0.0000000625rem )) {
-    .gallery__container h2 {
-      letter-spacing: clamp( -0.125rem , 0.3846156394rem  +  -1.9230778846vw , 0.0000000625rem );
-    }
-}
-
-@supports not (letter-spacing: clamp( -0.125rem , 0.3846156394rem  +  -1.9230778846vw , 0.0000000625rem )) {
-    .gallery__container h2 {
-      letter-spacing: calc(0.0000000625rem + -0.1250000625 * (100vw - 20rem) / 6.5);
-    }
-}
-
 @supports (margin-bottom: clamp( 0.9375rem , -0.9855769231rem  +  9.6153846154vw , 1.5625rem )) {
     .gallery__container h2 {
       margin-bottom: clamp( 0.9375rem , -0.9855769231rem  +  9.6153846154vw , 1.5625rem );
@@ -3834,18 +3806,6 @@ body::after {
     }
 }
 
-@supports (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .news__container h2 {
-      letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem );
-    }
-}
-
-@supports not (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .news__container h2 {
-      letter-spacing: calc(0.0625rem + -0.1875 * (100vw - 20rem) / 6.5);
-    }
-}
-
 @supports (margin-bottom: clamp( 0.9375rem , -0.9855769231rem  +  9.6153846154vw , 1.5625rem )) {
     .news__container h2 {
       margin-bottom: clamp( 0.9375rem , -0.9855769231rem  +  9.6153846154vw , 1.5625rem );
@@ -3867,18 +3827,6 @@ body::after {
 @supports not (font-size: clamp( 1.5rem , -0.0384615385rem  +  7.6923076923vw , 2rem )) {
     .reviews__container h2 {
       font-size: calc(1.5rem + 0.5 * (100vw - 20rem) / 6.5);
-    }
-}
-
-@supports (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .reviews__container h2 {
-      letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem );
-    }
-}
-
-@supports not (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .reviews__container h2 {
-      letter-spacing: calc(0.0625rem + -0.1875 * (100vw - 20rem) / 6.5);
     }
 }
 
@@ -3951,18 +3899,6 @@ body::after {
 @supports not (font-size: clamp( 1.5rem , -0.0384615385rem  +  7.6923076923vw , 2rem )) {
     .communication__contacts h2 {
       font-size: calc(1.5rem + 0.5 * (100vw - 20rem) / 6.5);
-    }
-}
-
-@supports (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .communication__contacts h2 {
-      letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem );
-    }
-}
-
-@supports not (letter-spacing: clamp( -0.125rem , 0.6394230769rem  +  -2.8846153846vw , 0.0625rem )) {
-    .communication__contacts h2 {
-      letter-spacing: calc(0.0625rem + -0.1875 * (100vw - 20rem) / 6.5);
     }
 }
 
