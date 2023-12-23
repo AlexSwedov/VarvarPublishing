@@ -1586,8 +1586,8 @@ body::after {
   width: 3.75rem;
 }
 
-.productcard__button-prev p,
-.productcard__button-next p {
+.productcard__button-prev span,
+.productcard__button-next span {
   position: absolute;
   top: 52%;
   left: 63%;
@@ -1610,7 +1610,7 @@ body::after {
   left: 10%;
 }
 
-.productcard__button-prev p {
+.productcard__button-prev span {
   left: 63%;
 }
 
@@ -1618,7 +1618,7 @@ body::after {
   right: 10%;
 }
 
-.productcard__button-next p {
+.productcard__button-next span {
   left: 36%;
 }
 
@@ -2072,8 +2072,8 @@ body::after {
 }
 
 @media (min-width: 64em) {
-  .productcard__button-prev p,
-  .productcard__button-next p {
+  .productcard__button-prev span,
+  .productcard__button-next span {
     font-size: 0.75rem;
   }
 }
@@ -5019,15 +5019,15 @@ body::after {
 
 @media (min-width: 48em) and (max-width: 64em) {
 @supports (font-size: clamp( 0.75rem , 0.75rem  +  0vw , 0.75rem )) {
-    .productcard__button-prev p,
-    .productcard__button-next p {
+    .productcard__button-prev span,
+    .productcard__button-next span {
       font-size: clamp( 0.75rem , 0.75rem  +  0vw , 0.75rem );
     }
 }
 
 @supports not (font-size: clamp( 0.75rem , 0.75rem  +  0vw , 0.75rem )) {
-    .productcard__button-prev p,
-    .productcard__button-next p {
+    .productcard__button-prev span,
+    .productcard__button-next span {
       font-size: calc(0.75rem + 0 * (100vw - 48rem) / 16);
     }
 }
