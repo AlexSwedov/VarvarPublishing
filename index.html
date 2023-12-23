@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231223131200">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231223134319">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -404,9 +404,9 @@
 						<h2>Зв'язок з нами</h2>
 						<form action="files/sendmail/sendmail.php" method="POST">
 							<label for="name">Ім'я</label>
-							<input id="name" class="input" type="text" name="form[name]" placeholder="Вкажіть Ваше імя" required>
+							<input id="name" class="input" type="text" name="form[name]" placeholder="Вкажіть Ваше імя" autocomplete="name" required>
 							<label for="email">Ел. пошта</label>
-							<input id="email" class="input" type="email" name="form[email]" placeholder="Вкажіть електронну пошту" required>
+							<input id="email" class="input" type="email" name="form[email]" placeholder="Вкажіть електронну пошту" autocomplete="email" required>
 							<label for="theme">Тема</label>
 							<input id="theme" class="input" type="text" name="form[theme]" placeholder="Вкажіть тему повідомлення" required>
 							<textarea name="form[textform]" type="text" class="textarea" id="message" cols="55" rows="8" placeholder="Добавте повідомлення..." required></textarea>
@@ -1083,9 +1083,10 @@
 
 
 
-	<script src="js/app.min.js?_v=20231223131200"></script>
-	<script async src="//www.instagram.com/embed.js?_v=20231223131200"></script>
-
+	<script>
+		document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
+	</script>
+	<script src="js/app.min.js?_v=20231223134319"></script>
 </body>
 
 </html>
