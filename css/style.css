@@ -92,6 +92,24 @@ h6 {
   font-size: inherit;
 }
 
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 30, 30, 0.5098039216);
+  border-radius: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: rgba(188, 186, 186, 0.5176470588);
+}
+
+* {
+  scrollbar-color: rgba(30, 30, 30, 0.5098039216) rgba(188, 186, 186, 0.5176470588);
+  scrollbar-width: thin;
+}
+
 body {
   background: url("../img/jpg/bg.jpg") 0 0/100% 100% no-repeat fixed;
 }
@@ -235,6 +253,24 @@ body::after {
 
 .lock .popup__content {
   visibility: visible;
+}
+
+.popup::-webkit-scrollbar {
+  width: 5px;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 30, 30, 0.5098039216);
+  border-radius: 6px;
+}
+
+.popup::-webkit-scrollbar-track {
+  background-color: rgba(188, 186, 186, 0.5215686275);
+}
+
+.popup * {
+  scrollbar-color: rgba(30, 30, 30, 0.5098039216) rgba(188, 186, 186, 0.5215686275);
+  scrollbar-width: thin;
 }
 
 .legal-popup .popup__content {

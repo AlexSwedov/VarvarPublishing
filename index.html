@@ -5,7 +5,7 @@
 	<title>VarvarPublishing</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20231224115257">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231230113951">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="Інтернетмагазин коміксів">
 	<meta name="keywords" content="Varvar Publishing, comics">
@@ -848,10 +848,243 @@
 
 
 
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity 0.5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+		<!-- Стилі для прелоадера -->
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			html {
+				overflow: hidden;
+				touch-action: none;
+				overscroll-behavior: none;
+			}
+
+			/* Головний блок */
+			.fls-preloader {
+				pointer-events: none;
+				z-index: -1;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			/* Блок з елементами */
+			.fls-preloader__body {
+				padding: 0.93rem;
+				max-width: 31.25rem;
+				position: relative;
+			}
+
+			/* Блок з лічильником */
+			.fls-preloader__counter {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 2rem;
+				font-weight: bold;
+			}
+
+			/* Loading Effect */
+
+			.loading-effect {
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.loading-effect>div {
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
+				/* border: 1px solid #000; */
+				border-radius: 50%;
+			}
+
+			.loading-effect>div:first-child {
+				animation: effect 1.5s infinite linear;
+			}
+
+			.loading-effect>div:first-child span {
+				background: rgba(25, 190, 155, 1);
+			}
+
+			.loading-effect>div:nth-child(2) {
+				animation: effect 2s infinite linear;
+			}
+
+			.loading-effect>div:nth-child(2) span {
+				background: rgb(110, 35, 142);
+			}
+
+			.loading-effect>div:nth-child(3) {
+				animation: effect 2.5s infinite linear;
+			}
+
+			.loading-effect>div:nth-child(3) span {
+				background: rgba(230, 75, 60, 1);
+			}
+
+			.loading-effect>div:nth-child(4) {
+				animation: effect 3s infinite linear;
+			}
+
+			.loading-effect>div:nth-child(4) span {
+				background: rgba(50, 70, 95, 1);
+			}
+
+			.loading-effect span {
+				display: block;
+				width: 15%;
+				height: 15%;
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0);
+				transform-origin: 0, 49px;
+			}
+
+			@-webkit-keyframes effect {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes effect {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="loading-effect">
+								<div>
+									<span></span>
+								</div>
+								<div>
+									<span></span>
+								</div>
+								<div>
+									<span></span>
+								</div>
+								<div>
+									<span></span>
+								</div>
+							</div>
+						</div>
+					</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress.toFixed(1)}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
 	<script>
 		document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
 	</script>
-	<script src="js/app.min.js?_v=20231224115257"></script>
+	<script src="js/app.min.js?_v=20231230113951"></script>
 </body>
 
 </html>
