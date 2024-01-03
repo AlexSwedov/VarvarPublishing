@@ -4517,12 +4517,12 @@
             const cartIndicator = document.getElementById("cart-indicator");
             document.querySelector(".item__added-cart");
             document.querySelector(".item__added-text");
+            const transportedElement = document.getElementById("transportedElement");
+            const openCart = document.getElementById("menu__cart");
+            const openCartFloat = document.getElementById("menu__cart-float");
             updateCartIndicator();
             window.addEventListener("storage", (function(event) {
-                if (event.key === "cart") {
-                    updateCartPopup();
-                    updateCartIndicator();
-                }
+                if (event.key === "cart") updateCartIndicator();
             }));
             addToCartButtons.forEach((button => {
                 button.addEventListener("click", (function(event) {
@@ -4556,13 +4556,16 @@
                     }
                 }));
             }));
-            cartIndicator.addEventListener("click", (function() {
+            function handleOpenCartClick() {
                 updateCartPopup();
-            }));
+            }
+            openCart.addEventListener("click", handleOpenCartClick);
+            openCartFloat.addEventListener("click", handleOpenCartClick);
             function updateCartIndicator() {
                 const cart = JSON.parse(localStorage.getItem("cart")) || [];
                 const totalItemsInCart = cart.reduce(((sum, item) => sum + item.quantity), 0);
                 cartIndicator.innerText = totalItemsInCart;
+                transportedElement.innerText = totalItemsInCart;
             }
             function showAdded(product) {
                 const addedImgElement = product.querySelector(".item__added-cart");
@@ -4670,6 +4673,44 @@
                 localStorage.setItem("cart", JSON.stringify(updatedCart));
             }
             updateCartPopup();
+        }));
+        document.addEventListener("DOMContentLoaded", (function() {
+            const floatingButton = document.getElementById("floatingButton");
+            const headerElement = document.getElementById("cart-indicator");
+            const transportedElement = document.getElementById("transportedElement");
+            floatingButton.style.opacity = "0";
+            window.addEventListener("scroll", (function() {
+                if (window.scrollY > 100) {
+                    floatingButton.style.opacity = "1";
+                    transportedElement.innerHTML = headerElement.innerHTML;
+                } else {
+                    floatingButton.style.opacity = "0";
+                    transportedElement.innerHTML = "";
+                }
+            }));
+        }));
+        document.addEventListener("DOMContentLoaded", (function() {
+            const floatingButton = document.getElementById("floatingButton");
+            let offsetX, offsetY, isDragging = false;
+            floatingButton.addEventListener("mousedown", (function(e) {
+                isDragging = true;
+                offsetX = e.clientX - floatingButton.getBoundingClientRect().left;
+                offsetY = e.clientY - floatingButton.getBoundingClientRect().top;
+            }));
+            document.addEventListener("mousemove", (function(e) {
+                if (isDragging) {
+                    const x = window.innerWidth - e.clientX - offsetX / 2;
+                    const y = window.innerHeight - e.clientY - offsetY / 2;
+                    floatingButton.style.right = x + "px";
+                    floatingButton.style.bottom = y + "px";
+                }
+            }));
+            document.addEventListener("mouseup", (function() {
+                isDragging = false;
+            }));
+            floatingButton.ondragstart = function() {
+                return false;
+            };
         }));
         window["FLS"] = true;
         isWebp();

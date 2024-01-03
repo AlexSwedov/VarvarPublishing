@@ -1814,6 +1814,30 @@ body::after {
   padding: 0.625rem;
 }
 
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.floating-button span {
+  position: absolute;
+  top: 37%;
+  left: 45%;
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  height: 10px;
+  color: #000;
+}
+
 .swiper {
   overflow: hidden;
 }
