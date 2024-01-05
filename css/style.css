@@ -384,6 +384,32 @@ body::after {
   transition: all 0.3s ease;
 }
 
+.contacts .popup__content {
+  -webkit-transition: -webkit-transform 0s ease 0s;
+  transition: -webkit-transform 0s ease 0s;
+  transition: transform 0s ease 0s;
+  transition: transform 0s ease 0s, -webkit-transform 0s ease 0s;
+  text-align: end;
+}
+
+.contacts button {
+  font-family: "garamond_allfont Regular";
+  color: #fff;
+  background-color: #000;
+  padding: 8px 15px;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contacts button:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -1205,6 +1231,10 @@ body::after {
   padding: 0.625rem 0.625rem 0rem 0rem;
 }
 
+.communication__contacts form * {
+  outline: none;
+}
+
 .communication__contacts h2 {
   font-family: "AA_Big_Sky Regular";
   font-size: 2.875rem;
@@ -1221,26 +1251,34 @@ body::after {
   color: #fff;
 }
 
+.communication__contacts input,
+.communication__contacts textarea {
+  font-size: 0.875rem;
+  border-radius: 0.625rem;
+  background-color: #c6c6cf;
+  padding: 0.625rem;
+  border: 0.0625rem solid #000;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.communication__contacts input:focus,
+.communication__contacts textarea:focus {
+  -webkit-box-shadow: 0 0 0.9375rem #fdc337;
+          box-shadow: 0 0 0.9375rem #fdc337;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
 .communication__contacts input {
   display: block;
   width: 50%;
-  padding-bottom: 0.9375rem;
-  font-size: 0.875rem;
-  background-color: #c6c6cf;
-  padding: 0.3125rem;
-  border-radius: 0.625rem;
   margin: 0.625rem 0rem;
-  border: 0.0625rem solid #000;
 }
 
 .communication__contacts textarea {
   width: 100%;
-  font-size: 0.875rem;
-  background-color: #c6c6cf;
-  border-radius: 0.625rem;
-  padding: 0.3125rem;
   margin-bottom: 0.625rem;
-  border: 0.0625rem solid #000;
   resize: none;
 }
 
@@ -1814,6 +1852,26 @@ body::after {
   padding: 0.625rem;
 }
 
+.contacts__info {
+  padding-top: 0.9375rem;
+  min-width: 100%;
+  text-align: left;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.contacts__info p {
+  margin-bottom: 0.9375rem;
+}
+
+.contacts__info a {
+  text-decoration: underline;
+}
+
+.contacts__info a:hover {
+  color: red;
+}
+
 .floating-button {
   position: fixed;
   bottom: 1.25rem;
@@ -2052,10 +2110,7 @@ body::after {
     font-size: 1.5rem;
   }
 
-  .communication__contacts input {
-    font-size: 0.875rem;
-  }
-
+  .communication__contacts input,
   .communication__contacts textarea {
     font-size: 0.875rem;
   }
@@ -2378,10 +2433,7 @@ body::after {
     font-size: 1.125rem;
   }
 
-  .communication__contacts input {
-    font-size: 0.625rem;
-  }
-
+  .communication__contacts input,
   .communication__contacts textarea {
     font-size: 0.625rem;
   }
@@ -2539,6 +2591,10 @@ body::after {
   }
 
   .legal-popup h3 {
+    font-size: 0.875rem;
+  }
+
+  .contacts__info {
     font-size: 0.875rem;
   }
 
@@ -3163,24 +3219,14 @@ body::after {
 }
 
 @supports (font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem )) {
-    .communication__contacts input {
-      font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem )) {
-    .communication__contacts input {
-      font-size: calc(0.625rem + 0.25 * (100vw - 48rem) / 25.125);
-    }
-}
-
-@supports (font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem )) {
+    .communication__contacts input,
     .communication__contacts textarea {
       font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem );
     }
 }
 
 @supports not (font-size: clamp( 0.625rem , 0.1473880597rem  +  0.9950248756vw , 0.875rem )) {
+    .communication__contacts input,
     .communication__contacts textarea {
       font-size: calc(0.625rem + 0.25 * (100vw - 48rem) / 25.125);
     }
@@ -3783,24 +3829,14 @@ body::after {
 }
 
 @supports (font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem )) {
-    .communication__contacts input {
-      font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem );
-    }
-}
-
-@supports not (font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem )) {
-    .communication__contacts input {
-      font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 27.9375);
-    }
-}
-
-@supports (font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem )) {
+    .communication__contacts input,
     .communication__contacts textarea {
       font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem );
     }
 }
 
 @supports not (font-size: clamp( 0.625rem , 0.4460290828rem  +  0.8948545861vw , 0.875rem )) {
+    .communication__contacts input,
     .communication__contacts textarea {
       font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 27.9375);
     }
@@ -4869,6 +4905,18 @@ body::after {
 @supports not (font-size: clamp( 0.75rem , -0.1071428571rem  +  4.2857142857vw , 1.5rem )) {
     .cart__pay button {
       font-size: calc(0.75rem + 0.75 * (100vw - 20rem) / 17.5);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.5892857143rem  +  1.4285714286vw , 1.125rem )) {
+    .contacts__info {
+      font-size: clamp( 0.875rem , 0.5892857143rem  +  1.4285714286vw , 1.125rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.5892857143rem  +  1.4285714286vw , 1.125rem )) {
+    .contacts__info {
+      font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 17.5);
     }
 }
 }

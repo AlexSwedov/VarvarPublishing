@@ -5,7 +5,7 @@
 	<title>VarvarPublishing</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240105112327">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240105224751">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="Інтернетмагазин коміксів">
 	<meta name="keywords" content="Varvar Publishing, comics">
@@ -413,7 +413,7 @@
 				<div class="communication__container">
 					<div class="communication__contacts">
 						<h2>Зв'язок з нами</h2>
-						<form action="files/sendmail/sendmail.php" method="POST">
+						<form data-dev action="files/sendmail/sendmail.php" method="POST">
 							<label for="name">Ім'я</label>
 							<input id="name" class="input" type="text" name="form[name]" placeholder="Вкажіть Ваше імя" autocomplete="name" required>
 							<label for="email">Ел. пошта</label>
@@ -434,16 +434,13 @@
 			<div class="footer__container">
 				<div class="footer__wrapper">
 					<div class="footer__contact">
-						<h3>Ми в соцмережах:</h3>
-						<a href="https://www.instagram.com/varvar_publishing/">Instagram</a>
+						<p>Ми в соцмережах: <a href="https://www.instagram.com/varvar_publishing/" target="_blank"> Instagram</a></p>
 					</div>
 					<div class="footer__safety">
 						<a href="#" data-popup="#legal">Правова інформація</a>
 					</div>
 					<div class="footer__servise">
-						<a href="#">Додаткові послуги</a>
-						<a href="https://www.varvarpublishing.com/"></a>
-						<a href="https://malopus.com.ua/"></a>
+						<a href="#" data-popup="#contacts">Контакти</a>
 					</div>
 				</div>
 				<div class="footer__copy">
@@ -832,6 +829,21 @@
 		</div>
 	</div>
 
+	<div id="contacts" aria-hidden="true" class="popup contacts">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрити</button>
+				<div class="popup__text">
+					<div class="contacts__info">
+						<p>ФОП Варгаліонок Артем Володимирович</p>
+						<p>Україна, м.Ужгород</p>
+						<a href="tel:+380001112233">тел: +38-(000)-111-22-33</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="floating-button" id="floatingButton">
 		<a href="#" data-popup="#cart" id="menu__cart-float">
 			<img src="img/png/buttonCart.svg" alt="Cart">
@@ -1075,7 +1087,7 @@
 	<script>
 		document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
 	</script>
-	<script src="js/app.min.js?_v=20240105112327"></script>
+	<script src="js/app.min.js?_v=20240105224751"></script>
 </body>
 
 </html>
