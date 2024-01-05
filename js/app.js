@@ -4680,7 +4680,7 @@
             const transportedElement = document.getElementById("transportedElement");
             floatingButton.style.opacity = "0";
             window.addEventListener("scroll", (function() {
-                if (window.scrollY > 100) {
+                if (parseInt(headerElement.innerText) === 0) floatingButton.style.opacity = "0"; else if (window.scrollY > 100) {
                     floatingButton.style.opacity = "1";
                     transportedElement.innerHTML = headerElement.innerHTML;
                 } else {

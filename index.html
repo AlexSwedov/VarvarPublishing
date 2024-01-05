@@ -5,7 +5,7 @@
 	<title>VarvarPublishing</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240103181514">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240105102718">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="description" content="Інтернетмагазин коміксів">
 	<meta name="keywords" content="Varvar Publishing, comics">
@@ -19,7 +19,7 @@
 			<div class="header__container">
 				<span class="header__blackbg"></span>
 				<div class="header__menu menu">
-					<button type="button" class="menu__icon icon-menu" name="button"><span></span></button>
+					<button type="button" class="menu__icon icon-menu" name="button" aria-label="Burger Menu"><span></span></button>
 					<nav class="menu__body">
 						<div class="menu__logo">
 							<img src="img/svg/logo_varvar.svg" alt="Logo">
@@ -40,14 +40,6 @@
 								</picture>
 								<span id="cart-indicator">0</span>
 							</a>
-							<!-- <a href="#" data-popup="#cart" id="menu__cart">
-						<img srcset="img/svg/cart_mobile.svg 767w,
-						img/svg/cart.svg"
-						sizes="(max-width: 767px) 100vw,
-						768px"
-						src="img/svg/cart.svg" alt="cart">
-						<span id="cart-indicator">0</span>
-					</a> -->
 						</div>
 					</nav>
 				</div>
@@ -66,7 +58,7 @@
 			</section>
 			<section class="bigslider">
 				<div class="bigslider__container">
-					<a data-goto-speed="1000" data-goto="#gallery" href="#"></a>
+					<a data-goto-speed="1000" data-goto="#gallery" href="#" aria-label="transition to the store"></a>
 					<div class="bigslider__text">
 						<h2>VARVAR PUBLISHING</h2>
 					</div>
@@ -78,12 +70,6 @@
 									<source media="(min-width: 425px)" srcset="img/png/banner1.png">
 									<img src="img/png/banner1.png" alt="img_banner" loading="lazy">
 								</picture>
-								<!-- <img srcset="img/png/banner_1_mobile.png 424w,
-						img/png/banner1.png"
-						sizes="(max-width: 424px) 100vw,
-            		425px"
-						src="img/png/banner1.png" alt="img_banner"
-						loading="lazy"> -->
 							</div>
 							<div class="bigslider__slide swiper-slide">
 								<picture>
@@ -848,7 +834,7 @@
 
 	<div class="floating-button" id="floatingButton">
 		<a href="#" data-popup="#cart" id="menu__cart-float">
-			<img src="img/png/buttonCart.svg" alt="">
+			<img src="img/png/buttonCart.svg" alt="Cart">
 			<span id="transportedElement"></span>
 		</a>
 	</div>
@@ -1089,7 +1075,7 @@
 	<script>
 		document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
 	</script>
-	<script src="js/app.min.js?_v=20240103181514"></script>
+	<script src="js/app.min.js?_v=20240105102718"></script>
 </body>
 
 </html>
